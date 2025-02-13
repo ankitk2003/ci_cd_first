@@ -15,5 +15,5 @@ jobs:
           touch /home/runner/.ssh/known_hosts
           echo "${{ secrets.KNOWN_HOSTS }}" &> /home/runner/.ssh/known_hosts
           chmod 700 /home/runner/ssh_key
-          ssh -i ~/ssh_key ubuntu@98.84.178.229 -t "cd ci_cd_first/ && git pull origin main && export PATH=$HOME/.nvm/versions/node/v22.13.1/bin:$PATH && sudo npm install -g pnpm && pnpm install && pnpm run build && pm2 restart fe-server && pm2 restart http-server && pm2 restart ws-server"
-  
+          ssh -i ~/ssh_key ubuntu@98.84.178.229 -t "cd ci_cd_first/ && git pull origin main && export PATH=$HOME/.nvm/versions/node/v22.13.1/bin:$PATH && npm install -g pnpm && pnpm install && pnpm run build && pm2 restart fe-server && pm2 restart http-server && pm2 restart ws-server"
+   
